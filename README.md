@@ -9,7 +9,7 @@ In this assignment, you will familiarize yourself with the GitHub submission pro
 
 ## The Assignment
 
-The file 'get_a_point_for_writing_your_name.py' contain methods that are incomplete.
+The file 'code_to_edit.py' contain methods that are incomplete.
 The current tests are failing because this method isn't providing the correct output. 
 You are required to fix them up and ensure the test passes for a successful submission.
 
