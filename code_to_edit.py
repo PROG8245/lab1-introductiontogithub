@@ -1,5 +1,5 @@
 def hi_my_name_is():
-    return "Islam" # Write your name inside the quotation marks
+    return "" # Write your name inside the quotation marks
 
 
 def length_of_string(x):
