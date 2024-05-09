@@ -1,0 +1,76 @@
+name: Autograding Tests
+'on':
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Testing Name
+      id: testing-name
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Testing Length of String 1
+      id: testing-length-of-string-1
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Testing Length of String 2
+      id: testing-length-of-string-2
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Testing Length of String 3
+      id: testing-length-of-string-3
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Testing Equal Numbers
+      id: testing-equal-numbers
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Testing Equal Number 2
+      id: testing-equal-number-2
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Testing Equal Numbers 3
+      id: testing-equal-numbers-3
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 1
+        max-score: 1
+        setup-command: sudo -H pip3 install pytest
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTING-NAME_RESULTS: "${{steps.testing-name.outputs.result}}"
+        TESTING-LENGTH-OF-STRING-1_RESULTS: "${{steps.testing-length-of-string-1.outputs.result}}"
+        TESTING-LENGTH-OF-STRING-2_RESULTS: "${{steps.testing-length-of-string-2.outputs.result}}"
+        TESTING-LENGTH-OF-STRING-3_RESULTS: "${{steps.testing-length-of-string-3.outputs.result}}"
+        TESTING-EQUAL-NUMBERS_RESULTS: "${{steps.testing-equal-numbers.outputs.result}}"
+        TESTING-EQUAL-NUMBER-2_RESULTS: "${{steps.testing-equal-number-2.outputs.result}}"
+        TESTING-EQUAL-NUMBERS-3_RESULTS: "${{steps.testing-equal-numbers-3.outputs.result}}"
+      with:
+        runners: testing-name,testing-length-of-string-1,testing-length-of-string-2,testing-length-of-string-3,testing-equal-numbers,testing-equal-number-2,testing-equal-numbers-3
