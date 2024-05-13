@@ -10,8 +10,8 @@ length_of_string()
 
 def two_numbers_equal():
     ## TODO: Write a code that takes as an inputs two numbers (x,y) and returns True if x is equal to y and False otherwise
-    x= 2
-    y= 3
+    x= input()
+    y= input()
     if x == y:
        return True
     else:
