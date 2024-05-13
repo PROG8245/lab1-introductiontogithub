@@ -1,11 +1,19 @@
 def hi_my_name_is():
-    return "" # Write your name inside the quotation marks
+    return "Otokpa Jeremiah Onah" # Write your name inside the quotation marks
+hi_my_name_is()
 
-
-def length_of_string(x):
+def length_of_string():
     ## TODO: Write a code that takes as an input string (x) returns the length of the string
-    return 0 # Replace 0 by the length
+    x=input("enter a string")
+    return len(x) # Replace 0 by the length
+length_of_string()
 
-def two_numbers_equal(x,y):
+def two_numbers_equal():
     ## TODO: Write a code that takes as an inputs two numbers (x,y) and returns True if x is equal to y and False otherwise
-    return True # Replace True by the needed return
+    x= 2
+    y= 3
+    if x == y:
+       return True
+    else:
+       return False # Replace True by the needed return
+two_numbers_equal()
